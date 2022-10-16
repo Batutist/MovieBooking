@@ -16,5 +16,5 @@ struct CustomSearchBar: View {
 struct CustomSearchBar_Previews: PreviewProvider {
     static var previews: some View {
         CustomSearchBar()
-    }
+    } 
 }
