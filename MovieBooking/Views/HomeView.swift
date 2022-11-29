@@ -12,15 +12,33 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
+            backgroundAnimation
+            
             VStack(spacing: 0.0) {
                 Text("Chose a movie")
                     .bold()
                     .font(.title3)
                     .foregroundColor(.white)
+                
+                CustomSearchBar()
+                    .padding(.vertical, 30)
+                    .padding(.horizontal, 20)
+                
+                // Vertical scroll view for the page content
+                ScrollView(.vertical, showsIndicators: true) {
+                    // Horizontal scroll views for different categories of movies
+                    ScrollView(.horizontal, showsIndicators: true) {
+                        VStack {
+                            ScrollSection(scrollSectionTitle: "Now Playing", posters: posters1)
+                                .padding(.horizontal, 10)
+                        }
+                    }
+                    .foregroundColor(.white)
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             
-            backgroundAnimation
+            
         }
         .background(
             LinearGradient(colors: [Color("backgroundColor"), Color("backgroundColor2")], startPoint: .top, endPoint: .bottom)
