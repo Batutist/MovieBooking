@@ -22,11 +22,23 @@ struct ScrollSection: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 20) {
                     ForEach(posters, id: \.self) { poster in
-                        Image(poster)
-                            .resizable()
-                            .frame(width: 100, height: 130)
-                            .aspectRatio(contentMode: .fill)
-                            .cornerRadius(20)
+                        NavigationLink {
+                            VStack {
+                                Text(poster)
+                                
+                                Image(poster)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                
+                                Spacer()
+                            }
+                        } label: {
+                            Image(poster)
+                                .resizable()
+                                .frame(width: 100, height: 130)
+                                .aspectRatio(contentMode: .fill)
+                                .cornerRadius(20)
+                        }
                     }
                 }
                 .offset(x: 20)
