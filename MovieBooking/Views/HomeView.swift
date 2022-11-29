@@ -25,15 +25,18 @@ struct HomeView: View {
                     .padding(.horizontal, 20)
                 
                 // Vertical scroll view for the page content
-                ScrollView(.vertical, showsIndicators: true) {
+                ScrollView(.vertical, showsIndicators: false) {
                     // Horizontal scroll views for different categories of movies
-                    ScrollView(.horizontal, showsIndicators: true) {
-                        VStack {
+                        VStack(spacing: 20) {
                             ScrollSection(scrollSectionTitle: "Now Playing", posters: posters1)
-                                .padding(.horizontal, 10)
+                                                            
+                            ScrollSection(scrollSectionTitle: "Coming Soon", posters: posters2)
+                            
+                            ScrollSection(scrollSectionTitle: "Top Movies", posters: posters3)
+                            
+                            ScrollSection(scrollSectionTitle: "Your Favorites", posters: posters3)
                         }
-                    }
-                    .foregroundColor(.white)
+                        .padding(.bottom, 100)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)

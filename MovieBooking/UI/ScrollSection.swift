@@ -15,8 +15,9 @@ struct ScrollSection: View {
         VStack(alignment: .leading) {
             Text(scrollSectionTitle)
                 .font(.headline)
-            //                .foregroundColor(.white)
+                .foregroundColor(.white)
                 .padding(.horizontal, 20)
+                .padding(.bottom, 20)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 20) {
