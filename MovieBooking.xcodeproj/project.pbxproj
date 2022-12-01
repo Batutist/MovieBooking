@@ -28,6 +28,7 @@
 		3D0EBFE128F4BDA600F442B1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0EBFE028F4BDA600F442B1 /* HomeView.swift */; };
 		3D0EBFE528F4C05800F442B1 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0EBFE428F4C05800F442B1 /* CustomSearchBar.swift */; };
 		3D49756B2936A9470071D797 /* ScrollSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49756A2936A9470071D797 /* ScrollSection.swift */; };
+		3D49756D293921EF0071D797 /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49756C293921EF0071D797 /* BookingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		3D0EBFE028F4BDA600F442B1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		3D0EBFE428F4C05800F442B1 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		3D49756A2936A9470071D797 /* ScrollSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollSection.swift; sourceTree = "<group>"; };
+		3D49756C293921EF0071D797 /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			children = (
 				3D0EBFD528F09DB300F442B1 /* TicketView.swift */,
 				3D0EBFE028F4BDA600F442B1 /* HomeView.swift */,
+				3D49756C293921EF0071D797 /* BookingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				3D0EBFDD28F4A16800F442B1 /* TabData.swift in Sources */,
 				3D0EBFCA28F09C6F00F442B1 /* RoundButton.swift in Sources */,
 				3D0EBFB228F09A6100F442B1 /* ContentView.swift in Sources */,
+				3D49756D293921EF0071D797 /* BookingView.swift in Sources */,
 				3D0EBFDF28F4A3D200F442B1 /* CustomTabBar.swift in Sources */,
 				3D0EBFE128F4BDA600F442B1 /* HomeView.swift in Sources */,
 				3D0EBFB028F09A6100F442B1 /* MovieBookingApp.swift in Sources */,
