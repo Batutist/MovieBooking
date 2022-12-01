@@ -30,6 +30,7 @@
 		3D49756B2936A9470071D797 /* ScrollSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49756A2936A9470071D797 /* ScrollSection.swift */; };
 		3D49756D293921EF0071D797 /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49756C293921EF0071D797 /* BookingView.swift */; };
 		3D49756F2939418E0071D797 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49756E2939418E0071D797 /* LargeButton.swift */; };
+		3D497571293948B30071D797 /* SeatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D497570293948B30071D797 /* SeatsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		3D49756A2936A9470071D797 /* ScrollSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollSection.swift; sourceTree = "<group>"; };
 		3D49756C293921EF0071D797 /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
 		3D49756E2939418E0071D797 /* LargeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
+		3D497570293948B30071D797 /* SeatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				3D0EBFD528F09DB300F442B1 /* TicketView.swift */,
 				3D0EBFE028F4BDA600F442B1 /* HomeView.swift */,
 				3D49756C293921EF0071D797 /* BookingView.swift */,
+				3D497570293948B30071D797 /* SeatsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				3D0EBFCD28F09C6F00F442B1 /* TimeButton.swift in Sources */,
 				3D0EBFCE28F09C6F00F442B1 /* StatusUI.swift in Sources */,
 				3D0EBFE528F4C05800F442B1 /* CustomSearchBar.swift in Sources */,
+				3D497571293948B30071D797 /* SeatsView.swift in Sources */,
 				3D0EBFD228F09C6F00F442B1 /* PosterData.swift in Sources */,
 				3D0EBFCC28F09C6F00F442B1 /* DateButton.swift in Sources */,
 				3D0EBFDB28F0B75D00F442B1 /* Tickets.swift in Sources */,
