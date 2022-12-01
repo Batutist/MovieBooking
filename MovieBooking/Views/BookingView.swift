@@ -36,52 +36,26 @@ struct BookingView: View {
                     
                     // Custom back navigation and options buttons
                     VStack(spacing: 0) {
-                        HStack {
-                            // Back button
-                            CircleButton {
-                                presentationMode.wrappedValue.dismiss()
-                            }
-                            
+                        
+                        CustomNavigationBar(rightButtonAction: {})
+                        
+                        // Main Content
+                        VStack {
                             Spacer()
                             
-                            // Options button
-                            CircleButton(action: {
-                                
-                            }, image: "ellipsis")
+                            content
+                            
+                            NavigationLink {
+                                Text("Seats View")
+                            } label: {
+                                LargeButton()
+                                    .padding(20)
+                                    .offset(y: selectedTime && selectedDate ? 0 : 500)
+                            }
                         }
-                        .padding(EdgeInsets(top: 46, leading: 20, bottom: 0, trailing: 20))
+                        .padding(.bottom, 30)
                     }
                     .frame(maxHeight: .infinity, alignment: .top)
-                    
-                    // Main Content
-                    VStack {
-                        Spacer()
-                        
-                        content
-                        
-                        NavigationLink {
-                            Text("Seats View")
-                        } label: {
-                            LargeButton()
-                                .padding(20)
-                                .offset(y: selectedTime && selectedDate ? 0 : 500)
-                            //                        .onTapGesture {
-                            //                            showAlert = true
-                            //                        }
-                            //                        .alert(isPresented: $showAlert) {
-                            //                            Alert(title: Text("You're all done"), message: Text("Selected movie has been confirmed"), dismissButton: .cancel(Text("OK"), action: {
-                            //                                withAnimation(.spring()) {
-                            //                                    selectedDate = false
-                            //                                    selectedTime = false
-                            //                                }
-                            //                            }))
-                            //                        }
-                        }
-                        
-                        
-                        
-                    }
-                    .padding(.bottom, 30)
                 }
                 .background(Color("backgroundColor2"))
                 .ignoresSafeArea()

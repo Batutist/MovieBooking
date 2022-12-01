@@ -86,6 +86,6 @@ struct CustomTabBar: View {
 
 struct CustomTabBar_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CustomTabBar(currentTab: .constant(Tab.home))
     }
 }

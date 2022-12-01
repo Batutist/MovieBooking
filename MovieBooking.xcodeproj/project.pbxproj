@@ -31,6 +31,7 @@
 		3D49756D293921EF0071D797 /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49756C293921EF0071D797 /* BookingView.swift */; };
 		3D49756F2939418E0071D797 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49756E2939418E0071D797 /* LargeButton.swift */; };
 		3D497571293948B30071D797 /* SeatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D497570293948B30071D797 /* SeatsView.swift */; };
+		3D49757329394A7D0071D797 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D49757229394A7D0071D797 /* CustomNavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		3D49756C293921EF0071D797 /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
 		3D49756E2939418E0071D797 /* LargeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
 		3D497570293948B30071D797 /* SeatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsView.swift; sourceTree = "<group>"; };
+		3D49757229394A7D0071D797 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				3D0EBFDE28F4A3D200F442B1 /* CustomTabBar.swift */,
 				3D0EBFE428F4C05800F442B1 /* CustomSearchBar.swift */,
 				3D49756A2936A9470071D797 /* ScrollSection.swift */,
+				3D49757229394A7D0071D797 /* CustomNavigationBar.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				3D49756D293921EF0071D797 /* BookingView.swift in Sources */,
 				3D0EBFDF28F4A3D200F442B1 /* CustomTabBar.swift in Sources */,
 				3D0EBFE128F4BDA600F442B1 /* HomeView.swift in Sources */,
+				3D49757329394A7D0071D797 /* CustomNavigationBar.swift in Sources */,
 				3D0EBFB028F09A6100F442B1 /* MovieBookingApp.swift in Sources */,
 				3D0EBFD328F09C6F00F442B1 /* TicketData.swift in Sources */,
 				3D0EBFCF28F09C6F00F442B1 /* CircleBackground.swift in Sources */,
