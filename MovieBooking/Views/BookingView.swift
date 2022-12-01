@@ -8,66 +8,95 @@
 import SwiftUI
 
 struct BookingView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     @State var gradient = [Color("backgroundColor2").opacity(0), Color("backgroundColor2"), Color("backgroundColor2"), Color("backgroundColor2")]
     
     @State var mockSelected = false
+    
     @State var selectedDate = false
-    @State var datePressed = false
+    @State var selectedTime = false
+    @State var showAlert = false
     
     var body: some View {
         GeometryReader { geometry in
-            ZStack {
-                Image("booking")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxHeight: .infinity, alignment: .top)
-                
-                // Gradient for the image fade effect
-                VStack {
-                    LinearGradient(colors: gradient, startPoint: .top, endPoint: .bottom)
-                        .frame(height: geometry.size.height / 1.5)
-                }
-                .frame(maxHeight: .infinity, alignment: .bottom)
-                
-                // Custom back navigation and options buttons
-                VStack(spacing: 0) {
-                    HStack {
-                        // Back button
-                        CircleButton {
+            NavigationStack {
+                ZStack {
+                    Image("booking")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxHeight: .infinity, alignment: .top)
+                    
+                    // Gradient for the image fade effect
+                    VStack {
+                        LinearGradient(colors: gradient, startPoint: .top, endPoint: .bottom)
+                            .frame(height: geometry.size.height / 1.5)
+                    }
+                    .frame(maxHeight: .infinity, alignment: .bottom)
+                    
+                    // Custom back navigation and options buttons
+                    VStack(spacing: 0) {
+                        HStack {
+                            // Back button
+                            CircleButton {
+                                presentationMode.wrappedValue.dismiss()
+                            }
                             
+                            Spacer()
+                            
+                            // Options button
+                            CircleButton(action: {
+                                
+                            }, image: "ellipsis")
                         }
-                        
+                        .padding(EdgeInsets(top: 46, leading: 20, bottom: 0, trailing: 20))
+                    }
+                    .frame(maxHeight: .infinity, alignment: .top)
+                    
+                    // Main Content
+                    VStack {
                         Spacer()
                         
-                        // Options button
-                        CircleButton(action: {
-                            
-                        }, image: "ellipsis")
+                        content
+                        
+                        NavigationLink {
+                            Text("Seats View")
+                        } label: {
+                            LargeButton()
+                                .padding(20)
+                                .offset(y: selectedTime && selectedDate ? 0 : 500)
+                            //                        .onTapGesture {
+                            //                            showAlert = true
+                            //                        }
+                            //                        .alert(isPresented: $showAlert) {
+                            //                            Alert(title: Text("You're all done"), message: Text("Selected movie has been confirmed"), dismissButton: .cancel(Text("OK"), action: {
+                            //                                withAnimation(.spring()) {
+                            //                                    selectedDate = false
+                            //                                    selectedTime = false
+                            //                                }
+                            //                            }))
+                            //                        }
+                        }
+                        
+                        
+                        
                     }
-                    .padding(EdgeInsets(top: 46, leading: 20, bottom: 0, trailing: 20))
-                    
-
-                    
+                    .padding(.bottom, 30)
                 }
-                .frame(maxHeight: .infinity, alignment: .top)
-              
-                // Main Content
-                VStack {
-                    labels
-                    
-                    dateCards
-                }
+                .background(Color("backgroundColor2"))
+                .ignoresSafeArea()
             }
-            .background(Color("backgroundColor2"))
-            .ignoresSafeArea()
+            .navigationBarBackButtonHidden(true)
         }
     }
     
     private var content: some View {
-        VStack {
+        VStack(spacing: 0) {
             labels
             
             dateCards
+            
+            timeButtons
         }
     }
     
@@ -115,6 +144,27 @@ struct BookingView: View {
             
             DateButton(weekDay: "Mon", numDay: "5", isSelected: $mockSelected) {}
                 .padding(.top, 90)
+        }
+    }
+    
+    private var timeButtons: some View {
+        HStack(alignment: .top, spacing: 20) {
+            TimeButton(hour: "16:00", isSelected: $mockSelected) {}
+                .padding(.top, 20)
+            
+            TimeButton(hour: "18:00", isSelected: $mockSelected) {}
+            
+            TimeButton(hour: "20:00", width: 70, isSelected: $selectedTime) {
+                withAnimation(.spring()) {
+                    selectedTime.toggle()
+                }
+            }
+            .padding(.top, -20)
+            
+            TimeButton(hour: "22:00", isSelected: $mockSelected) {}
+            
+            TimeButton(hour: "00:00", isSelected: $mockSelected) {}
+                .padding(.top, 20)
         }
     }
 }

@@ -24,13 +24,7 @@ struct ScrollSection: View {
                     ForEach(posters, id: \.self) { poster in
                         NavigationLink {
                             VStack {
-                                Text(poster)
-                                
-                                Image(poster)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                
-                                Spacer()
+                                BookingView()
                             }
                         } label: {
                             Image(poster)
