@@ -49,9 +49,11 @@ struct BookingView: View {
                                 Text("Seats View")
                             } label: {
                                 LargeButton()
-                                    .padding(20)
                                     .offset(y: selectedTime && selectedDate ? 0 : 500)
                             }
+                            .padding(20)
+                            .disabled(selectedTime && selectedDate ? false : true)
+                            
                         }
                         .padding(.bottom, 30)
                     }
