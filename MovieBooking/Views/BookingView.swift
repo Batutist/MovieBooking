@@ -46,7 +46,7 @@ struct BookingView: View {
                             content
                             
                             NavigationLink {
-                                Text("Seats View")
+                                SeatsView()
                             } label: {
                                 LargeButton()
                                     .offset(y: selectedTime && selectedDate ? 0 : 500)
