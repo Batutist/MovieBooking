@@ -94,7 +94,9 @@ struct SeatsView: View {
                 HStack {
                     Spacer()
                     
-                    RoundButton()
+                    RoundButton {
+                        NavigationUtil.popToRootView()
+                    }
                 }
                 .frame(maxHeight: .infinity)
             }
@@ -103,7 +105,7 @@ struct SeatsView: View {
             .foregroundColor(.white)
             .background(.ultraThinMaterial)
             .padding(.top, 50)
-//            .offset(y: showButton ? 0 : 250)
+            .offset(y: showButton ? 0 : 250)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(Color("backgroundColor"))
