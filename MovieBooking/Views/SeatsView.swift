@@ -11,6 +11,8 @@ struct SeatsView: View {
     private var title = "Chose Seat"
     private var rightButtonIcon = "calendar"
     
+    @State var animate = false
+    @State var showButton = false
     
     // Unused two states for now
     @State private var isSeatPressed: Bool = false
@@ -41,6 +43,11 @@ struct SeatsView: View {
             Image("seats")
                 .padding(.top, 60)
                 .padding(.horizontal, 20)
+                .onTapGesture {
+                    withAnimation(.spring()) {
+                        showButton.toggle()
+                    }
+                }
             
             HStackLayout(spacing: 20) {
                 StatusUI()
@@ -50,6 +57,9 @@ struct SeatsView: View {
             .padding(.top, 60)
             
             ZStack(alignment: .topLeading) {
+                
+                circlesAnimation
+                
                 VStack(alignment: .leading, spacing: 30) {
                     HStack(spacing: 10.0) {
                         Image(systemName: "calendar")
@@ -80,17 +90,53 @@ struct SeatsView: View {
                 }
                 .padding(42)
                 .font(.subheadline)
+                
+                HStack {
+                    Spacer()
+                    
+                    RoundButton()
+                }
+                .frame(maxHeight: .infinity)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             .clipped()
             .foregroundColor(.white)
             .background(.ultraThinMaterial)
             .padding(.top, 50)
+//            .offset(y: showButton ? 0 : 250)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(Color("backgroundColor"))
 //        .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)
+        
+        
+    }
+    private var circlesAnimation: some View {
+        Group {
+            Circle()
+                .frame(width: 200, height: 230)
+                .foregroundColor(Color("purple"))
+                .blur(radius: animate ? 70 : 100)
+                .offset(x: animate ? -100 : 20, y: animate ? -20 : 20)
+                .task {
+                    withAnimation(.easeInOut(duration: 7).repeatForever()) {
+                        animate.toggle()
+                    }
+                }
+            
+            Circle()
+                .frame(width: 200, height: 230)
+                .foregroundColor(Color("lightBlue"))
+                .blur(radius: animate ? 50 : 100)
+                .offset(x: animate ? 50 : 70, y: animate ? -20 : 20)
+            
+            Circle()
+                .frame(width: 200, height: 230)
+                .foregroundColor(Color("pink"))
+                .blur(radius: animate ? 70 : 100)
+                .offset(x: animate ? 150 : 170, y: animate ? 90 : 100)
+        }
     }
     
     // unfinished option of usable seats buttons
